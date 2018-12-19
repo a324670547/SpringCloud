@@ -11,9 +11,9 @@
     </parent>
 
     <groupId>com.example</groupId>
-    <artifactId>spring-cloud-netflix-eureka-server</artifactId>
+    <artifactId>spring-cloud-netflix-eureka-server-cluster</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-cloud-netflix-eureka-server</name>
+    <name>spring-cloud-netflix-eureka-server-cluster</name>
 
     <properties>
         <java.version>1.8</java.version>
@@ -21,13 +21,25 @@
     </properties>
 
     <dependencies>
+        <!--Sprtingboot Web-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <!--Eureka Server-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+        <!-- Actuator -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!-- Security -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
     </dependencies>
 

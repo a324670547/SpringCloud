@@ -1,65 +1,15 @@
 spring:
-  profiles: eureka1
   application:
     name: spring-cloud-netflix-eureka-server
-  security:
-    user:
-      name: admin
-      password:  123456
-
-server:
-  port: 8887
-
-eureka:
-  instance:
-    hostname: eureka1
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://admin:123456@eureka1:8887/eureka/,http://admin:123456@eureka2:8888/eureka/,http://admin:123456@eureka3:8889/eureka/
----
-spring:
-  profiles: eureka2
-  application:
-    name: spring-cloud-netflix-eureka-server
-  security:
-    user:
-      name: admin
-      password:  123456
 
 server:
   port: 8888
 
 eureka:
   instance:
-    hostname: eureka2
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    hostname: localhost
   client:
-    registerWithEureka: true
-    fetchRegistry: true
+    registerWithEureka: false
+    fetchRegistry: false
     serviceUrl:
-      defaultZone: http://admin:123456@eureka1:8887/eureka/,http://admin:123456@eureka2:8888/eureka/,http://admin:123456@eureka3:8889/eureka/
----
-spring:
-  profiles: eureka3
-  application:
-    name: spring-cloud-netflix-eureka-server
-  security:
-    user:
-      name: admin
-      password:  123456
-
-server:
-  port: 8889
-
-eureka:
-  instance:
-    hostname: eureka3
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://admin:123456@eureka1:8887/eureka/,http://admin:123456@eureka2:8888/eureka/,http://admin:123456@eureka3:8889/eureka/
+      defaultZone: http://localhost:8888/eureka/
