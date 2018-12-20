@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: spring-cloud-netflix-hystrix-eureka-server
+
+server:
+  port: 8888
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:8888/eureka/
