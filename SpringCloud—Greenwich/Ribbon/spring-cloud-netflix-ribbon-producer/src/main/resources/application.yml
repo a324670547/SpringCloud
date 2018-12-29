@@ -1,0 +1,33 @@
+spring:
+  profiles: ribbon-producer1
+  application:
+    name: spring-cloud-netflix-ribbon-producer
+
+server:
+  port: 9101
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8888/eureka/
+
+info:
+  name: ${spring.profiles}
+
+---
+
+spring:
+  profiles: ribbon-producer2
+  application:
+    name: spring-cloud-netflix-ribbon-producer
+
+server:
+  port: 9102
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8888/eureka/
+
+info:
+  name: ${spring.profiles}
